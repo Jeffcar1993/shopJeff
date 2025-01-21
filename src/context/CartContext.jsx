@@ -1,7 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const CartContext = createContext();
 
 const carritoInicial = JSON.parse(localStorage.getItem("carrito")) || [];

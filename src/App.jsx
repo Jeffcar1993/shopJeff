@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Nosotros from "./components/Nosotros";
 import Contacto from "./components/Contacto";
 import Carrito from "./components/Carrito";
-import { CartProvider } from "./context/cartContext";
+import { CartProvider } from "./context/CartContext";
 import CheckOut from "./components/CheckOut";
 
 const App = () => {
