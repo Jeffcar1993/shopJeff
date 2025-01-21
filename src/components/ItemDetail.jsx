@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import ItemCount from './ItemCount';
 import { useContext, useState } from 'react';
-import { CartContext } from '../context/cartContext';
+import { CartContext } from '../context/CartContext';
 
 const ItemDetail = ( {item} ) => {
   
