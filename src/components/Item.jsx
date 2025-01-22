@@ -2,9 +2,13 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Item = ( {producto} ) => {
+  
+  console.log("url", producto.imagen);
   return (
     <div className="producto">
-        <img src={producto.imagen} alt={producto.titulo}/>
+        <img src={producto.imagen} alt={producto.titulo} />
+        
+        
         <div>
             <h4>{producto.titulo}</h4>
             <p>Precio: $ {producto.precio}</p>
