@@ -59,7 +59,7 @@ const Login = ( {setUser} ) => {
 }
 
 Login.propTypes = {
-    setUser: PropTypes.string // Obligatorio y de tipo booleano
+    setUser: PropTypes.func.isRequired // Obligatorio y de tipo booleano
 };
 
 export default Login
