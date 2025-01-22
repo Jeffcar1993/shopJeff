@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
+import { Frown } from "lucide-react";
 
 const Carrito = () => {
 
@@ -16,6 +17,7 @@ const Carrito = () => {
         {
             carrito.map((prod) => (
                 <div key={prod.id}>
+                    <img className="icon" src={prod.imagen} alt={prod.titulo} />
                     <h2>{prod.titulo}</h2>
                     <p>categoria: {prod.categoria}</p>
                     <p>Cant: {prod.cantidad}</p>
@@ -32,7 +34,7 @@ const Carrito = () => {
                 <Link className="enviar" to="/checkout">Finalizar compra</Link>
                 <button className="vaciar" onClick={handleVaciar}>Vaciar Carrito</button>
             </> :
-            <h2>El carrito esta vacio</h2>
+            <h2 className="vacio">El carrito esta vacio <Frown /> </h2>
         }
     </div>
   )

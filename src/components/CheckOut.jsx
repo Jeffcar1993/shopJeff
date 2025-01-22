@@ -60,6 +60,7 @@ const CheckOut = () => {
                 placeholder="telefono" 
                 {...register("telefono")}
             />
+            
             <button className="enviar" 
                 type="submit">
                     Comprar

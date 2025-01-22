@@ -254,3 +254,15 @@
     border-radius: .5rem;
     color: white;
   }
+
+  .vacio {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .icon {
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+  }
