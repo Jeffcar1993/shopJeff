@@ -100,6 +100,7 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 2rem;
+    align-items: center;
 }
 
 .producto-detalle img {
@@ -253,6 +254,7 @@
     background-color: orange ;
     border-radius: .5rem;
     color: white;
+    cursor: pointer;
   }
 
   .vacio {
@@ -266,3 +268,20 @@
     flex-direction: column;
     width: 50px;
   }
+
+.select {
+    padding: 8px;
+    border-radius: .5rem;
+    width: 288px;
+}
+
+.area {
+    padding: 8px;
+    border-radius: .5rem;
+    width: 288px;
+}
+
+.titulo {
+    font-size: 28px;
+    margin-bottom: 10px;
+}

@@ -26,6 +26,7 @@ const ItemDetail = ( {item} ) => {
                 <h3 className="titulo">{item.titulo}</h3>
                 <p className="descripcion">{item.descripcion}</p>
                 <p className="categoria">Categoria: {item.categoria}</p>
+                <p className='categoria'>Stock: {item.stock}</p>
                 <p className="precio">Precio: $ {item.precio}</p>
                 <ItemCount 
                   cantidad={cantidad} 

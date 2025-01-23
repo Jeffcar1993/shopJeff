@@ -40,15 +40,21 @@ const IngresoProductos = () => {
 
     const salir = () => {
         localStorage.removeItem('user');
-        navigate('/login');
+        navigate('/productos');
     };
+
+    const cargarNuevoProducto = () => {
+        setProductoId(""); // Reinicia el estado del producto cargado
+        reset(); // Limpia el formulario
+    };
+    
 
     if(productoId) {
         return (
             <div className="container">
                 <h1 className="main-title">Producto cargado exitosamente !</h1>
                 <p>Tu numero de producto es: {productoId}</p>
-                <button className="cargar" type="submit">Cargar nuevo producto</button>
+                <button className="cargar" type="submit" onClick={cargarNuevoProducto}>Cargar nuevo producto</button>
                 <button className="enviar" type="button" onClick={salir}>Salir</button>
             </div>
         )
@@ -66,11 +72,19 @@ const IngresoProductos = () => {
                 />
                 {errors.titulo && <p className="error">{errors.titulo.message}</p>}
 
-                <input 
-                    type="text" 
-                    placeholder="categoria"
-                    {...register('categoria', { required: 'La categoría es obligatoria' })}
-                />
+                <select
+                    className="select"
+                    {...register("categoria", { required: "La categoría es obligatoria" })}
+                    defaultValue=""
+                >
+                    <option value="" disabled>
+                        Selecciona una categoría
+                    </option>
+                    <option value="medias">Medias</option>
+                    <option value="pantalones">Pantalones</option>
+                    <option value="remeras">Remeras</option>
+                    <option value="buzos">Buzos</option>
+                </select>
                 {errors.categoria && <p className="error">{errors.categoria.message}</p>}
 
                 <input 

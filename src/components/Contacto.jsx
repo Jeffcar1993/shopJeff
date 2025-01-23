@@ -2,11 +2,12 @@ import { useForm } from "react-hook-form";
 
 const Contacto = () => {
 
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
     const enviar = (data) => {
         console.log(data);
-        
+        alert("¡Mensaje enviado exitosamente!");
+        reset();
     }
 
   return (
@@ -30,6 +31,12 @@ const Contacto = () => {
                 placeholder="telefono" 
                 {...register("telefono")}
             />
+            <textarea
+                    placeholder="Escribe tu mensaje aquí..."
+                    rows="3"
+                    className="area"
+                    {...register("mensaje", { required: "El mensaje es obligatorio" })}
+                ></textarea>
             <button className="enviar" 
                 type="submit">
                     Enviar

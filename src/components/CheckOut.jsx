@@ -3,6 +3,7 @@ import { CartContext } from "../context/CartContext";
 import { useForm } from "react-hook-form";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase/config";
+import { useNavigate } from "react-router-dom";
 
 
 const CheckOut = () => {
@@ -12,6 +13,8 @@ const CheckOut = () => {
     const { carrito, precioTotal, vaciarCarrito } = useContext(CartContext);
 
     const { register, handleSubmit } = useForm();
+
+    const navigate = useNavigate();
     
         const comprar = (data) => {
             const pedido = {
@@ -30,11 +33,16 @@ const CheckOut = () => {
                 })  
         }
 
+        const volver = () => {
+            navigate('/productos');
+        }
+
         if(pedidoId) {
             return (
                 <div className="container">
                     <h1 className="main-title">Muchas gracias por tu compra</h1>
                     <p>Tu numero de pedido es: {pedidoId}</p>
+                    <button className="cargar" type="submit" onClick={volver} >Volver al comercio</button>
                 </div>
             )
         }
